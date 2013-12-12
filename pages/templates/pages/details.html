@@ -1,0 +1,14 @@
+{% extends "pages/base.html" %}
+
+{% if word %}
+
+	{% block page_title %}
+		{{ word.word }}
+	{% endblock %}
+
+	{% block content %}
+			<p>{{ word.text_with_hrefs|safe }}</p>
+			<a class="btn btn-default" href="{% url 'edit' word.word %}">Edit word description</a>
+	{% endblock %}
+	
+{% endif %}

@@ -1,0 +1,25 @@
+{% extends "pages/base.html" %}
+
+{% if word %}
+
+	{% block page_title %}
+		Word to edit: {{ word.word }}
+	{% endblock %}
+
+	{% block content %}
+		<div class="row">
+			<div class="col-sm-6">
+				<h4>Old Text</h4>
+				<p>{{ word.text_with_hrefs|safe }}</p>
+			</div>
+			<div class="col-sm-6">
+				<h4>New text</h4>
+				<form class="form-signin" role="form" action="{% url 'update_view' %}" method="GET">
+			        <textarea class="form-control" rows="10" placeholder="Edit word description" name="new_text" required autofocus></textarea>
+			        <button class="btn btn-default" name="word_name", value="{{ word.word }}" type="submit">Submit</button>
+				</form>
+			</div>
+		</div>
+	{% endblock %}
+	
+{% endif %}

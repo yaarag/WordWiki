@@ -1,0 +1,15 @@
+{% extends "pages/base.html" %}
+
+{% block page_title %}
+	Add new word
+{% endblock %}
+
+{% block content %}
+
+	<form class="form-signin" role="form" action="{% url 'update_view' %}" method="GET">
+        <input type="text" class="form-control" placeholder="Word" name="word_name" required autofocus>
+        <textarea class="form-control" rows="10" placeholder="Description" name="new_text" required autofocus></textarea>
+        <button class="btn btn-default" type="submit">Submit</button>
+	</form>
+
+{% endblock %}
